@@ -176,3 +176,38 @@
 // if (isNaN(number1)){
 //     adiossssssssss
 // }
+
+
+// CANCIONES DE LUIS MIGUEL
+
+// [
+//   {
+//     name: 'La incondicionl',
+//     duration:3.50,
+//     isAcoustic: false
+//   },
+//   {},
+//   {},
+//   {}
+// ]
+
+//ToDo El prompt de Excalibur
+let name='';
+let isKing = false;
+
+while( name.toLowerCase()!=='arturo' || isKing!==true){
+  name=prompt('Como te llamas?');
+  if(name.toLowerCase()==='arturo'){
+    isKing = confirm('Sos rey?');
+    if(isKing===false){
+      alert('No sos rey pa')
+    }
+  }else{
+    alert('No te llamas Arturo, anda pegate un baño')
+  }
+}
+console.log('Salve el Rey Arturo');
+
+//* Confirm
+// OK --> true
+// Cancel --> false
