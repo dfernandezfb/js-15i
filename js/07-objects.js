@@ -17,6 +17,7 @@ let person = {
   }
 }
 
+
 //Para leer un dato podemos utilizar dos tipos de notaciones:
 
 //* Notación de punto
@@ -79,8 +80,8 @@ class Country{
     this.name=name;
     this.people=people;
   }
-  toLowerCase
-  toUpperCase
+  // toLowerCase
+  // toUpperCase
 }
 
 const arg = new Country('Argentina', 40000000);
@@ -96,3 +97,45 @@ console.log(cadena);
 10
 
 new Number(10)
+
+const series = [
+  {
+    name:'Friends',
+    seasons:10,
+    origin: 'EEUU',
+    description:'6 amigos que realizan aventuras',
+    showDescription: function(){
+      console.log(`La serie se llama ${this.name}, un breve resumen es el siguiente:\n ${this.description} `)
+    }
+  },{
+    name:'Game of Thrones',
+    seasons:8,
+    origin:'Ireland',
+    description:'Una lucha interminable por el trono de hierro',
+    showDescription: function(){
+      console.log(`La serie se llama ${this.name}, un breve resumen es el siguiente:\n ${this.description} `)
+    }
+  },{
+    name:'Breaking Bad',
+    seasons:5,
+    origin:'EEUU',
+    description:'Un profesor de quimica que descubre su lado malvado',
+    showDescription: function(){
+      console.log(`La serie se llama ${this.name}, un breve resumen es el siguiente:\n ${this.description} `)
+    }
+  }
+]
+
+// series.forEach(mostrarDescripcion)
+
+// function mostrarDescripcion(serie){
+//   serie.showDescription();
+// }
+
+series.forEach(serie=>serie.showDescription())
+// series.map(serie=>serie.showDescription()) --> [null,null,null]
+// [1,2,3]
+// numeros.forEach(numero=>console.log(numero))
+// 1 --> console.log(1)
+// 2 --> console.log(2)
+// 3 --> console.log(3)
