@@ -1,0 +1,37 @@
+.special-effects{
+  background-color: tomato;
+  animation: test infinite ease-in 1s;
+}
+
+@keyframes test{
+0%{
+  font-size: 30px;
+}
+50%{
+  font-size: 35px;
+}
+100%{
+  font-size: 25px;
+}
+}
+
+.light{
+  background-color: white;
+  color: black;
+}
+
+.dark{
+  background-color: black;
+  color: white;
+}
+.square{
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  margin-bottom: 10px;
+}
+.squares-container{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
