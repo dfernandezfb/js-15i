@@ -35,3 +35,18 @@
   justify-content: space-around;
   flex-wrap: wrap;
 }
+.tweet-styles{
+  height: 100px;
+  border-radius: .25rem;
+}
+
+.corral{
+  width: 80vw;
+  height: 50vh;
+  border: black dotted 3px;
+}
+.pet{
+  width: 75px;
+  height: 75px;
+  background-color: tomato;
+}
