@@ -50,3 +50,13 @@
   height: 75px;
   background-color: tomato;
 }
+
+.test-img{
+  height: 700px;
+  width: 600px;
+  border-radius: .1rem;
+}
+.big-bg{
+  width: 100vw;
+  height: 100vh;
+}
