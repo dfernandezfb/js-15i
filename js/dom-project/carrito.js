@@ -1,3 +1,7 @@
+const userLogged = localStorage.getItem('usera');
+if(!userLogged){
+  window.location.assign(window.location.origin + '/login.html')
+}
 //CARRITO DE COMPRAS
 
 class Product{
@@ -158,3 +162,7 @@ const removeProduct = (id)=>{
 //! array.filter() //que pasa si ese array no existe o no es un elemento array? se rompe
 //* array?.filter() //la solución es poner el signo de pregunta y de esa manera solo si es un elemento array va a hacer el filter
 
+const logout = ()=>{
+  localStorage.removeItem('usera');
+  window.location.assign(window.location.origin + '/login.html')
+}
