@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RC - ADMIN</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+<body>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Rolling Commerce</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="carrito.html">Inicio</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="nav-link" data-bs-toggle="modal" data-bs-target="#carrito-modal">
+                Carrito
+              </button>
+            </li>
+            <a class="nav-link" href="./favs.html">
+              Favoritos
+            </a>
+          </li>
+          <li class="nav-item">
+            <button type="button" class="nav-link" onclick="logout()">
+              Cerrar sesión
+            </button>
+          </li>
+          <li class="nav-item">
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main class="container mt-5">
+    <h1>Tabla de administración</h1>
+    <p>En esta tabla podrás modificar todos los datos que se presentan en tu página</p>
+    <div class="d-flex justify-content-end mb-3">
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#add-modal"> Agregar producto</button>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">COD</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">Imagen</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+  </main>
+  <!--MODALES-->
+  <!-- Modal de agregar productos -->
+  <div class="modal fade" id="add-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form onsubmit="addProduct(event)">
+            <label for="product-name">Nombre del producto</label>
+            <input id="product-name" type="text" class="form-control" required maxlength="40">
+            <label for="product-description">Descripción del producto</label>
+            <input id="product-description" type="text" class="form-control" required maxlength="100">
+            <label for="product-price" >Precio</label>
+            <input id="product-price" type="number" class="form-control" required min="0">
+            <label for="product-image">Imagen del producto</label>
+            <input id="product-image" type="text" class="form-control" required>
+            <button class="ms-auto mt-3 btn btn-primary d-block" type="submit">Agregar producto</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal de editar productos -->
+  <div class="modal fade" id="edit-modal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Editar producto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="edit-form">
+            <label for="product-name-edit">Nombre del producto</label>
+            <input id="product-name-edit" type="text" class="form-control" required maxlength="40">
+            <label for="product-description-edit">Descripción del producto</label>
+            <input id="product-description-edit" type="text" class="form-control" required maxlength="100">
+            <label for="product-price-edit" >Precio</label>
+            <input id="product-price-edit" type="number" class="form-control" required min="0">
+            <label for="product-image-edit">Imagen del producto</label>
+            <input id="product-image-edit" type="text" class="form-control" required>
+            <button class="ms-auto mt-3 btn btn-primary d-block" type="submit">Editar producto</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="js/dom-project/admin.js"></script>
+</body>
+</html>

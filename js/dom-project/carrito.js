@@ -1,4 +1,4 @@
-const userLogged = localStorage.getItem('usera');
+const userLogged = JSON.parse(localStorage.getItem('userInfo'));
 if(!userLogged){
   window.location.assign(window.location.origin + '/login.html')
 }
@@ -14,7 +14,9 @@ class Product{
   }
 }
 
-let products = [
+let products = localStorage.getItem('products') ? 
+JSON.parse(localStorage.getItem('products')):
+[
   new Product('Notebook El Robles', 'JR', 100000,'i5 - 8gb ram - gamer - 256gb ssd','./assets\\images\\photo-1525547719571-a2d4ac8945e2.avif'),
   new Product('Disco HDD El Guille', 'GA', 10000, '2 Tb', 'https://images.unsplash.com/photo-1531492746076-161ca9bcad58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80'),
   new Product('Monitor El Diegote', 'DF', 90000, "IPS 27' UHD4K",'https://images.unsplash.com/photo-1585792180666-f7347c490ee2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1477&q=80'),
@@ -22,8 +24,6 @@ let products = [
   new Product('Celular Gabius', 'GR',50000,'Full HD - 4gb ram - 128gb','https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80'),
   new Product('Televisor El Diegote', 'DF1','106000','Full HD - Android TV - 50"', 'https://images.unsplash.com/photo-1593305841991-05c297ba4575?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1057&q=80')  
 ]
-
-localStorage.setItem('products',JSON.stringify(products));
 
 // let cart; 
 // let favs; 
@@ -163,6 +163,15 @@ const removeProduct = (id)=>{
 //* array?.filter() //la solución es poner el signo de pregunta y de esa manera solo si es un elemento array va a hacer el filter
 
 const logout = ()=>{
-  localStorage.removeItem('usera');
+  localStorage.removeItem('userInfo');
   window.location.assign(window.location.origin + '/login.html')
+}
+
+if(userLogged.admin){
+  const adminButton = document.createElement('li');
+  adminButton.classList.add('nav-item');
+  adminButton.innerHTML=`
+  <a class="nav-link active" aria-current="page" href="admin.html">Administración</a>
+  `
+  document.querySelector('.navbar-nav').appendChild(adminButton);
 }

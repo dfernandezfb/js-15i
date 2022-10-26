@@ -36,7 +36,7 @@ const login = (e)=>{
   const password = document.getElementById('values-password-login').value;
   const userFound = users.find(user=>user.email===email);
   if(userFound && userFound.password===password){
-    localStorage.setItem('usera',JSON.stringify(userFound));
+    localStorage.setItem('userInfo',JSON.stringify(userFound));
     console.log(userFound);
     window.location.assign(window.location.origin + '/carrito.html');
   // if(userFound){
