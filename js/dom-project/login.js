@@ -1,3 +1,5 @@
+import { navbar } from "../12-helperFunctions.js"
+
 class User{
   constructor(id,name, age, email, password, admin){
     this.id = id
@@ -149,3 +151,5 @@ const validateFieldsRegister = (name, age, email, password, password2)=>{
 // // }
 // // Object.keys(errores) []
 // // Object.values(errores) ['hola','chau']
+
+navbar()
