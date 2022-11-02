@@ -73,7 +73,7 @@ const resolviendoPromesa = async()=>{
 
 const getRandomCocktail = async()=>{
   try {
-    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?lat=-26.81&lon=-65.21&appid=95473dc3791f643b5c418e0eb62bab91&lang=es&units=metric');
+    const response = await fetch('url');
     const data = await response.json();
     console.log(data);  
   } catch (error) {
